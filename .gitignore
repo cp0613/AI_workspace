@@ -1,0 +1,24 @@
+*
+!.gitignore
+
+!agents/
+!agents/**
+
+!skills/
+!skills/**
+
+# https://github.com/anthropics/skills
+skills/docx
+skills/pdf
+skills/pptx
+skills/xlsx
+
+# claude
+skills/dogfooding
+
+# private
+knowledge/gitsrc
+knowledge/gen/proposal
+knowledge/gen/repo_commit_tracker
+skills/mcp-server-center-docs
+skills/write-okr
