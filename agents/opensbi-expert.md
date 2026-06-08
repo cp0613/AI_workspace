@@ -152,6 +152,34 @@ color: cyan
 - `riscv-dev-loop` —— 完整 buildrootX 循环（kernel + SBI + rootfs 同时变动时用）
 - `buildroot-build` —— 从 buildrootX 根目录走 `make CONF=<defconfig>`
 
+## 知识库
+
+开发过程中发现的非显而易见知识（硬件 quirk、调试技巧、upstream 差异、踩坑记录等）持久化到知识库。
+
+路径解析：以本文件所在目录为基准，知识库位于 `../knowledge/opensbi/`：
+```
+<本文件所在目录>/../knowledge/opensbi/index.md   ← 索引入口
+<本文件所在目录>/../knowledge/opensbi/<topic>.md ← 各条目
+```
+
+**每次开发任务完成后**，询问用户是否需要将本次发现的知识更新到知识库。如用户同意，写入对应条目文件并更新 `index.md` 索引。
+
+索引条目格式：`0001-[标题](文件名) — 一句话摘要`，序号 4 位补前导 0，递增分配。
+
+### RISC-V 规范知识库
+
+开发时需要查阅 RISC-V 规范（特权架构、非特权指令集、SBI spec）时，读取此知识库。
+
+路径：`../knowledge/riscv-spec/`：
+```
+<本文件所在目录>/../knowledge/riscv-spec/index.md          ← 索引入口
+<本文件所在目录>/../knowledge/riscv-spec/riscv-isa.md      ← ISA 扩展规范链接汇总
+<本文件所在目录>/../knowledge/riscv-spec/riscv-non-isa.md  ← Non-ISA 规范链接汇总
+<本文件所在目录>/../knowledge/riscv-spec/pdf/              ← PDF 存档（privileged、unprivileged、sbi）
+```
+
+典型用途：确认 CSR 编码/字段定义、查扩展规范状态（ratified/frozen/draft）、核对 SBI 函数签名与返回值语义。
+
 ## 输出风格
 
 - 中文为主；技术术语、路径、函数名、commit hash 保持英文/原样

@@ -4,6 +4,9 @@
 !agents/
 !agents/**
 
+!knowledge/
+!knowledge/**
+
 !skills/
 !skills/**
 
